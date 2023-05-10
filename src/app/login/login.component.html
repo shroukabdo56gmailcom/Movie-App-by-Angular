@@ -1,0 +1,18 @@
+<form class="w-50 mx-auto  my-5" action="../home/home.component.html" [formGroup]="login" (ngSubmit)="submitform()">
+    <div class="my-2">
+        <label for="">Email</label>
+        <input type="email" formControlName="email" class="form-control my-1" />
+        <p class="text-danger" *ngIf="login.controls['email'].touched &&login.controls['email'].invalid"> Email is not valid!!</p>
+      </div>
+      <div class="my-2">
+        <label for="">Password</label>
+        <input type="password" formControlName="password"  class="form-control my-1" />
+        <p class="text-danger" *ngIf="login.controls['password'].touched &&login.controls['password'].invalid">Wrong Password</p>
+      </div>
+      <input type="submit" [disabled]="login.invalid" class="btn btn-primary float-end">
+      <p class="text-muted" >Don't have account? <span class="text-primary " style="cursor: pointer;" routerLink="/reg">SIGN UP </span></p>
+      <p class="text-danger" *ngIf="isNotReg">Sorry we can't find your Email, Please signUp first  </p>
+
+      <div class="clearfix"></div>
+  
+</form>

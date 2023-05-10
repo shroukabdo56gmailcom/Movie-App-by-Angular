@@ -1,0 +1,16 @@
+<div class="row py-5 gy-3">
+    <div class="col-4">
+      <hr class="w-25" />
+      <h2 (click)="getTrandingtv()">Trending<br />Tv<br />to watch now</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, earum.
+      </p>
+      <hr>
+    </div>
+    <div class="col-2 " *ngFor="let tv of tvShows">
+      <a [routerLink]="['/details', tv.media_type, tv.id]" class="nav-link">
+      <img [src]="imgPath+tv.poster_path" class="w-100 p-2" alt="" srcset="" />
+      <h2 class="h6">{{ tv.name}}</h2>
+      </a>
+    </div>
+  </div>

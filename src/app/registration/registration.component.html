@@ -1,0 +1,34 @@
+<div>
+  <form action="" class="w-50 mx-auto  my-5" [formGroup]="resgistration" (ngSubmit)="submitform()">
+    <h3>Resistration Form</h3>
+    <div class="my-2">
+      <label for="">First name:</label>
+      <input type="text" formControlName="first_name" class="form-control my-1" />
+      <p class="text-danger" *ngIf="resgistration.controls['first_name'].touched &&resgistration.controls['first_name'].invalid"> Name should be withen 3 to 30 char</p>
+    </div>
+    <div class="my-2">
+      <label for="">Last name:</label>
+      <input type="text" formControlName="last_name" class="form-control my-1" />
+      <p class="text-danger" *ngIf="resgistration.controls['last_name'].touched &&resgistration.controls['last_name'].invalid"> Name should be withen 3 to 30 char</p>
+    </div>
+    <div class="my-2">
+      <label for="">Age:</label>
+      <input type="number" formControlName="age" class="form-control my-1" />
+      <p class="text-danger" *ngIf="resgistration.controls['age'].touched &&resgistration.controls['age'].invalid"> Age should be withen 18 to 50 Years</p>
+    </div>
+    <div class="my-2">
+      <label for="">Email</label>
+      <input type="email" formControlName="email" class="form-control my-1" />
+      <p class="text-danger" *ngIf="resgistration.controls['email'].touched &&resgistration.controls['email'].errors"> Email is not valid!!</p>
+    </div>
+    <div class="my-2">
+      <label for="">Password</label>
+      <input type="password" formControlName="password"  class="form-control my-1" />
+      <p class="text-danger" *ngIf="resgistration.controls['password'].touched &&resgistration.controls['password'].invalid"> Password must contain : 8 char , Numbers , upper & lower cases  </p>
+    </div>
+    <input type="submit" [disabled]="resgistration.invalid" class="btn btn-primary float-end">
+    <p class="text-muted" >Already have account? <span class="text-primary " style="cursor: pointer;" routerLink="/">SIGN IN </span></p>
+    <p class="text-danger" *ngIf="isRegisterd">This Email is already resgistered, please login..</p>
+    <div class="clearfix"></div>
+  </form>
+</div>

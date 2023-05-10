@@ -1,0 +1,21 @@
+<div class="row py-5 gy-3">
+  <div class="col-4">
+    <hr class="w-25" />
+    <h2>Trending<br />movies<br />to watch now</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, earum.
+    </p>
+    <hr />
+  </div>
+  <div class="col-2" *ngFor="let movie of Tmovies">
+    <a [routerLink]="['/details', movie.media_type, movie.id]" class="nav-link">
+      <img
+        [src]="imgPath + movie.poster_path"
+        class="w-100 p-2"
+        alt=""
+        srcset=""
+      />
+      <h2 class="h6">{{ movie.title }}</h2>
+    </a>
+  </div>
+</div>

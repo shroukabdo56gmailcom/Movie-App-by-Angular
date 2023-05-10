@@ -1,0 +1,23 @@
+<div class="p-5 row ">
+<div class="col-4">
+    <img [src]="imgPath+myMovieDetails.poster_path" class="w-100 img-thumbnail" alt="">
+    <img *ngIf="myMovieDetails.profile_path" [src]="imgPath+myMovieDetails.profile_path" class="w-100" alt="">
+</div>
+<div class="col-8 pt-5">
+    <h3 *ngIf="myMovieDetails.original_title">{{myMovieDetails.original_title}}</h3>
+    <h3 *ngIf="myMovieDetails.name">{{myMovieDetails.name}}</h3>
+    <div >
+        <span *ngFor="let item of myMovieDetails.genres" class="bg-primary p-1 text-white m-1 rounded-2"> {{item.name}} </span>
+    </div>
+    <p *ngIf="myMovieDetails.vote_average">Vote: {{myMovieDetails.vote_average?.toFixed(1)}}</p>
+    <p *ngIf="myMovieDetails.vote_count" >Vote Count: {{myMovieDetails.vote_count}}</p>
+    <p>Popularity: {{myMovieDetails.popularity}}</p>
+    <p *ngIf="myMovieDetails.release_date">Release date: {{myMovieDetails.release_date}}</p>
+    <p *ngIf="myMovieDetails.first_air_date">Release date: {{myMovieDetails.first_air_date}}</p>
+    <p *ngIf="myMovieDetails.birthday">Birthday: {{myMovieDetails.birthday}}</p>
+    <p *ngIf="myMovieDetails.overview">Description:  {{myMovieDetails.overview}}</p>
+    <p *ngIf="myMovieDetails.biography">Biography: {{myMovieDetails.biography}}</p>
+    <a *ngIf="myMovieDetails.homepage" class="btn btn-info" [href]="myMovieDetails.homepage" target="_blank">Visit page</a>
+
+</div>
+</div>
